@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="service" class="ma.hmzelidrissi.service.WeatherServiceImpl"/>
+    <bean id="presentation" class="ma.hmzelidrissi.presentation.WeatherPresImpl"/>
+    <bean id="app" class="ma.hmzelidrissi.WeatherApp">
+        <property name="weatherService" ref="service"/>
+        <property name="weatherPres" ref="presentation"/>
+
+    </bean>
+<!--    <bean id="app" class="ma.hmzelidrissi.WeatherApp">-->
+<!--        <constructor-arg ref="service"/>-->
+<!--        <constructor-arg ref="presentation"/>-->
+<!--    </bean>-->
+</beans>
